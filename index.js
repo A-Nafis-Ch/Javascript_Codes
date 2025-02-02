@@ -785,7 +785,88 @@ console.log('Js Test');
 // console.log(a);
 // console.log(b);
 
-console.log("This is Js testing!")
+// console.log("This is Js testing!")
+
+// ES6 Modules & Classes
+//  Modules - Export/Import
+
+ // * check in ES6 Module folder
+
+ // Class
+
+//  class Student{
+//     // constructor
+//     constructor(name,id){
+
+//         this.name = name;
+//         this.id = id;
+//     }
+
+//     set studentName(name){
+
+//         this.name = name;
+
+
+//     }
+
+//     get studentInfo(){
+
+//         return this.id+ ' ' + this.name;
+//     }
+
+//  }
+
+//  // creating object
+
+//  let s1 = new Student('Nafis',101)
+
+// //  console.log(`Student Name: ${s1.name} and Id: ${s1.id}`);
+
+// // s1.studentName = 'Abdullah';
+// // console.log(s1.name);
+
+// console.log(s1.studentInfo);
+
+// Synchronous VS Asynchronous
+
+// In Asynchronous, you just have to add setTimeout function
+
+const Task1 = () => {
+
+    console.log("Task-1");
+};
+
+const DataLoading = () => {
+
+    console.log("Task-2. Data Loading");
+    
+}
+const Task2 = () => {
+
+    setTimeout(DataLoading,2000);
+};
+const Task3 = () => {
+
+    console.log("Task-3");
+};
+const Task4 = () => {
+
+    console.log("Task-4");
+};
+const Task5 = () => {
+
+    console.log("Task-5");
+};
+
+Task1();
+Task2();
+Task3();
+Task4();
+Task5();
+ 
+
+
+ 
 
 
 

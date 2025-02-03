@@ -1,5 +1,5 @@
 
-console.log('Js Test');
+// console.log('Js Test');
 
 // // document.getElementById('heading1').innerHTML="Heading1 is changed!"; //getElementById
 // // document.getElementsByClassName('class1')[0].innerHTML = "Para is changed!"; //when you add Element(s) then it becomes array. getElementsbyClassName.
@@ -831,38 +831,104 @@ console.log('Js Test');
 
 // In Asynchronous, you just have to add setTimeout function
 
-const Task1 = () => {
+// const Task1 = () => {
+
+//     console.log("Task-1");
+// };
+
+// const DataLoading = () => {
+
+//     console.log("Task-2. Data Loading");
+    
+// }
+// const Task2 = () => {
+
+//     setTimeout(DataLoading,2000);
+// };
+// const Task3 = () => {
+
+//     console.log("Task-3");
+// };
+// const Task4 = () => {
+
+//     console.log("Task-4");
+// };
+// const Task5 = () => {
+
+//     console.log("Task-5");
+// };
+
+// Task1();
+// Task2();
+// Task3();
+// Task4();
+// Task5();
+
+// Callback and higher order function
+
+// function Square(x) {
+
+//     console.log(`Square of ${x} : ${x*x}`);
+
+// }
+// // Square(5);
+
+// function higherOrderFunc(num, callback){
+
+//     callback(num);
+// }
+// higherOrderFunc(10,Square);
+
+const Task1 = (callback) => {
 
     console.log("Task-1");
+    callback();
 };
 
-const DataLoading = () => {
+const Task2 = (callback) => {
 
-    console.log("Task-2. Data Loading");
+    setTimeout(() => {
+
+        console.log('Task-2. Data Loading')
+        callback();
+    },3000);
     
-}
-const Task2 = () => {
-
-    setTimeout(DataLoading,2000);
 };
-const Task3 = () => {
+const Task3 = (callback) => {
 
     console.log("Task-3");
+    callback();
 };
-const Task4 = () => {
+const Task4 = (callback) => {
 
     console.log("Task-4");
+    callback();
 };
-const Task5 = () => {
+const Task5 = (callback) => {
 
     console.log("Task-5");
+    callback();
 };
 
-Task1();
-Task2();
-Task3();
-Task4();
-Task5();
+Task1(() => {
+
+    Task2(() => {
+
+        Task3(() => {
+            Task4(()=>{
+
+                Task5();
+            });
+        });
+    });
+});
+
+
+
+
+
+
+
  
 
 

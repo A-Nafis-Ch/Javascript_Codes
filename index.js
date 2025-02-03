@@ -879,49 +879,52 @@
 // }
 // higherOrderFunc(10,Square);
 
-const Task1 = (callback) => {
+// const Task1 = (callback) => {
 
-    console.log("Task-1");
-    callback();
-};
+//     console.log("Task-1");
+//     callback();
+// };
 
-const Task2 = (callback) => {
+// const Task2 = (callback) => {
 
-    setTimeout(() => {
+//     setTimeout(() => {
 
-        console.log('Task-2. Data Loading')
-        callback();
-    },3000);
+//         console.log('Task-2. Data Loading')
+//         callback();
+//     },3000);
     
-};
-const Task3 = (callback) => {
+// };
+// const Task3 = (callback) => {
 
-    console.log("Task-3");
-    callback();
-};
-const Task4 = (callback) => {
+//     console.log("Task-3");
+//     callback();
+// };
+// const Task4 = (callback) => {
 
-    console.log("Task-4");
-    callback();
-};
-const Task5 = (callback) => {
+//     console.log("Task-4");
+//     callback();
+// };
+// const Task5 = (callback) => {
 
-    console.log("Task-5");
-    callback();
-};
+//     console.log("Task-5");
+//     callback();
+// };
 
-Task1(() => {
+// Task1(() => {
 
-    Task2(() => {
+//     Task2(() => {
 
-        Task3(() => {
-            Task4(()=>{
+//         Task3(() => {
+//             Task4(()=>{
 
-                Task5();
-            });
-        });
-    });
-});
+//                 Task5();
+//             });
+//         });
+//     });
+// });
+
+console.log("welcome");
+console.log("end");
 
 
 

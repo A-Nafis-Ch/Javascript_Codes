@@ -928,10 +928,73 @@
 
 
 console.log("welcome");
+
+
+
+// how to create promise:
+// Promise has 3 stages: pending, resolve, reject
+
+const promise1 = new Promise((resolve, reject)=>{
+    let completedPromise = true; // If false then promise1 will be rejected.
+
+    if(completedPromise){
+
+        resolve('resolved promise');
+    }else{
+
+        reject('rejected promise');
+    }
+
+});
+
+const promise2 = new  Promise((resolve, reject) => {
+
+  let compromise = true;
+  if(compromise){
+    resolve('resolved promise2');
+  }else{
+     reject('rejected promise 2');
+  }
+
+});
+
+// promise1.then((res) => {
+
+//     console.log(res);
+// })
+
+// promise1.catch((err) =>{
+
+//     console.log(err);
+
+
+// });
+
+// promise2.then((res) => {
+
+//   console.log(res);
+// })
+
+// promise2.catch((err) =>{
+
+//   console.log(err);
+
+
+// });
+
+// Promise.all([promise1, promise2]).then((res => {
+
+//   console.log(res);
+   
+// }))
+
+Promise.all([promise1, promise2]).then(([res1,res2]) => {console.log(res1, res2)});
+
+
+
+
+
 console.log("end");
-
-//how to create promise - pending, resolve, reject
-
 
 
 

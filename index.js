@@ -924,41 +924,17 @@
 // });
 
 
-//   Promise
+//  Promise
+
+
 console.log("welcome");
-
-
-// how to create promise:
-// Promise has 3 stages: pending, resolve, reject
-
-const promise1 = new Promise((resolve, reject)=>{
-    let completedPromise = true; // If false then promise1 will be rejected.
-
-    if(completedPromise){
-
-        resolve('resolved promise');
-    }else{
-
-        reject('rejected promise');
-    }
-
-});
-
-promise1.then((res) => {
-
-    console.log(res);
-})
-
-promise1.catch((err) =>{
-
-    console.log(err);
-
-
-});
-
-
-
 console.log("end");
+
+//how to create promise - pending, resolve, reject
+
+
+
+
 
 
 

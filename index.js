@@ -927,36 +927,36 @@
 //  Promise
 
 
-console.log("welcome");
+// console.log("welcome");
 
 
 
 // how to create promise:
 // Promise has 3 stages: pending, resolve, reject
 
-const promise1 = new Promise((resolve, reject)=>{
-    let completedPromise = true; // If false then promise1 will be rejected.
+// const promise1 = new Promise((resolve, reject)=>{
+//     let completedPromise = true; // If false then promise1 will be rejected.
 
-    if(completedPromise){
+//     if(completedPromise){
 
-        resolve('resolved promise');
-    }else{
+//         resolve('resolved promise');
+//     }else{
 
-        reject('rejected promise');
-    }
+//         reject('rejected promise');
+//     }
 
-});
+// });
 
-const promise2 = new  Promise((resolve, reject) => {
+// const promise2 = new  Promise((resolve, reject) => {
 
-  let compromise = true;
-  if(compromise){
-    resolve('resolved promise2');
-  }else{
-     reject('rejected promise 2');
-  }
+//   let compromise = true;
+//   if(compromise){
+//     resolve('resolved promise2');
+//   }else{
+//      reject('rejected promise 2');
+//   }
 
-});
+// });
 
 // promise1.then((res) => {
 
@@ -988,13 +988,81 @@ const promise2 = new  Promise((resolve, reject) => {
    
 // }))
 
-Promise.all([promise1, promise2]).then(([res1,res2]) => {console.log(res1, res2)});
+// Promise.all([promise1, promise2]).then(([res1,res2]) => {console.log(res1, res2)});
 
 
 
 
 
-console.log("end");
+// console.log("end");
+
+// Promise Chaining
+
+const Task1 = () => {
+
+  return new Promise((resolve,  reject) => {resolve('Resolved Task1')});
+};
+
+const Task2 = () => {
+
+  return new Promise((resolve,  reject) =>
+    setTimeout(() => {
+
+      resolve('Resolved Task2');
+
+    }, 5000)
+)};
+
+const Task3 = () => {
+
+  return new Promise((resolve,  reject) => {reject('Rejected Task3')});
+};
+
+const Task4 = () => {
+
+  return new Promise((resolve,  reject) => {resolve('Resolved Task4')});
+};
+
+// Task1()
+// .then((res) => console.log(res))
+// .then(Task2)
+// .then((res) => console.log(res))
+// .then(Task3)
+// .then((res) => console.log(res))
+// .then(Task4)
+// .then((res => console.log(res)))
+// .catch((err) => console.log(err));
+
+// Async and await
+
+async function callAllTasks(){
+
+  try{
+      const t1 = await Task1();
+      console.log(t1);
+  
+      const t2 = await Task2();
+      console.log(t2);
+    
+  
+      const t3 = await Task3();
+      console.log(t3);
+  
+  
+      const t4 = await Task4();
+      console.log(t4);
+
+  }catch(e){
+
+    console.log(e);
+  }  
+}
+
+callAllTasks();
+
+// calling api from js || XMLHttpRequest
+
+
 
 
 

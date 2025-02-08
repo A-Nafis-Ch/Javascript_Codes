@@ -1068,30 +1068,100 @@
 
  
 
-const makeRequest = (method, url) => {
 
-  const xhr = new XMLHttpRequest();
-  xhr.open(method, url);
+// console.clear();
 
-  xhr.onload = () => {
-    let data = xhr.response;
-    console.log(JSON.parse(data));
-  }
+// event - onload(), onerror()
+// property - response, responseText, responseType, responseURL, status, statusText
+// function - open(), send(), setRequestHeader()
 
-  xhr.onerror = () => {
 
-    console.log('Error occured');
-  }
+// const makeRequest = (method, url, data) => {
 
-  xhr.send();
- 
-}
+//     return new Promise((resolve, reject) => {
+//         const xhr = new XMLHttpRequest();
+//         xhr.open(method, url);
 
-const getData = () = {
+//         xhr.setRequestHeader('Content-Type', 'application/json');
 
-  makeRequest('GET','https://jsonplaceholder.typicode.com/posts/1');
+//         xhr.onload = () => {
+//             let data = xhr.response;
+//             console.log(JSON.parse(data))
+//         }
 
-}
+//         xhr.onerror = () => {
+//             console.log('error is here');
+//         }
+
+//         xhr.send(JSON.stringify(data));
+//     });
+// }
+
+
+// const getData = () => {
+//     makeRequest('GET', 'https://jsonplaceholder.typicode.com/posts')
+//         .then((res) => console.log(res))
+// }
+
+// getData();
+// const sendData = () => {
+//     makeRequest('POST', 'https://jsonplaceholder.typicode.com/posts', {
+//         title: 'foo',
+//         body: 'bar',
+//         userId: 1,
+//     });
+// }
+// const updateData = () => {
+//     makeRequest('PUT', 'https://jsonplaceholder.typicode.com/posts/1', {
+//         id: 1,
+//         title: 'fooMA',
+//         body: 'barMA',
+//         userId: 1,
+//     });
+// }
+// const updateSingleData = () => {
+//     makeRequest('PATCH', 'https://jsonplaceholder.typicode.com/posts/1', {
+
+//         title: 'This is changed',
+
+//     });
+// }
+// const deleteData = () => {
+//     makeRequest('DELETE', 'https://jsonplaceholder.typicode.com/posts/1');
+// }
+// deleteData();
+
+//  FETCH APi
+
+
+console.clear();
+
+fetch('https://jsonplaceholder.typicode.com/posts/1', {
+  method: 'POST',
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+  body: JSON.stringify({
+    title: 'foo',
+    body: 'bar',
+    userId: 1,
+  }),
+})
+.then((res) => {
+   if(!res.ok){
+    const message =  `Error: ${res.status}`;
+    throw new Error(message);
+   }
+
+   return res.json();
+
+})
+
+.then((res)=> console.log(res)).catch((err) => console.log(err));
+
+
+
+
 
 
 

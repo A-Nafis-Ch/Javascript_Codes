@@ -998,30 +998,30 @@
 
 // Promise Chaining
 
-const Task1 = () => {
+// const Task1 = () => {
 
-  return new Promise((resolve,  reject) => {resolve('Resolved Task1')});
-};
+//   return new Promise((resolve,  reject) => {resolve('Resolved Task1')});
+// };
 
-const Task2 = () => {
+// const Task2 = () => {
 
-  return new Promise((resolve,  reject) =>
-    setTimeout(() => {
+//   return new Promise((resolve,  reject) =>
+//     setTimeout(() => {
 
-      resolve('Resolved Task2');
+//       resolve('Resolved Task2');
 
-    }, 5000)
-)};
+//     }, 5000)
+// )};
 
-const Task3 = () => {
+// const Task3 = () => {
 
-  return new Promise((resolve,  reject) => {reject('Rejected Task3')});
-};
+//   return new Promise((resolve,  reject) => {reject('Rejected Task3')});
+// };
 
-const Task4 = () => {
+// const Task4 = () => {
 
-  return new Promise((resolve,  reject) => {resolve('Resolved Task4')});
-};
+//   return new Promise((resolve,  reject) => {resolve('Resolved Task4')});
+// };
 
 // Task1()
 // .then((res) => console.log(res))
@@ -1035,32 +1035,63 @@ const Task4 = () => {
 
 // Async and await
 
-async function callAllTasks(){
+// async function callAllTasks(){
 
-  try{
-      const t1 = await Task1();
-      console.log(t1);
+//   try{
+//       const t1 = await Task1();
+//       console.log(t1);
   
-      const t2 = await Task2();
-      console.log(t2);
+//       const t2 = await Task2();
+//       console.log(t2);
     
   
-      const t3 = await Task3();
-      console.log(t3);
+//       const t3 = await Task3();
+//       console.log(t3);
   
   
-      const t4 = await Task4();
-      console.log(t4);
+//       const t4 = await Task4();
+//       console.log(t4);
 
-  }catch(e){
+//   }catch(e){
 
-    console.log(e);
-  }  
-}
+//     console.log(e);
+//   }  
+// }
 
-callAllTasks();
+// callAllTasks();
 
 // calling api from js || XMLHttpRequest
+
+
+// console.clear();
+// console.log(window);
+
+ 
+
+const makeRequest = (method, url) => {
+
+  const xhr = new XMLHttpRequest();
+  xhr.open(method, url);
+
+  xhr.onload = () => {
+    let data = xhr.response;
+    console.log(JSON.parse(data));
+  }
+
+  xhr.onerror = () => {
+
+    console.log('Error occured');
+  }
+
+  xhr.send();
+ 
+}
+
+const getData = () = {
+
+  makeRequest('GET','https://jsonplaceholder.typicode.com/posts/1');
+
+}
 
 
 

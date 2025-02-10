@@ -1134,30 +1134,141 @@
 //  FETCH APi
 
 
-console.clear();
+// console.clear();
 
-fetch('https://jsonplaceholder.typicode.com/posts/1', {
-  method: 'POST',
-  headers: {
-    'Content-type': 'application/json; charset=UTF-8',
-  },
-  body: JSON.stringify({
-    title: 'foo',
-    body: 'bar',
-    userId: 1,
-  }),
-})
-.then((res) => {
-   if(!res.ok){
-    const message =  `Error: ${res.status}`;
-    throw new Error(message);
-   }
+// fetch('https://jsonplaceholder.typicode.com/posts/1', {
+//   method: 'POST',
+//   headers: {
+//     'Content-type': 'application/json; charset=UTF-8',
+//   },
+//   body: JSON.stringify({
+//     title: 'foo',
+//     body: 'bar',
+//     userId: 1,
+//   }),
+// })
+// .then((res) => {
+//    if(!res.ok){
+//     const message =  `Error: ${res.status}`;
+//     throw new Error(message);
+//    }
 
-   return res.json();
+//    return res.json();
 
-})
+// })
 
-.then((res)=> console.log(res)).catch((err) => console.log(err));
+// .then((res)=> console.log(res)).catch((err) => console.log(err));
+
+// Sigma Web Development Course - Code with Harry
+
+
+// async function getData(){
+//   return new Promise((resolve,reject) => {
+
+//     setTimeout(() => {
+
+//       resolve(455)
+//     }, 5000);
+//   })
+// };
+
+// async function main(){
+
+//   console.log('Loading module');
+//   console.log('Do another Task');
+
+//   console.log('Load Data');
+
+//   let data = await getData();
+
+//   console.log(data);
+//   console.log('process data');
+//   console.log('Next Task');
+// }
+
+// main();
+
+// creating hacking simulator:
+
+const paraId = document.querySelector('.para');
+
+
+const Task1= () => {
+
+  return new Promise((resolve,reject)=>{
+    setTimeout(() =>{
+
+      resolve('Initializing Hacking...');
+
+    },1000);
+  })
+}
+
+const Task2= () => {
+
+  return new Promise((resolve,reject)=>{
+    setTimeout(() =>{
+
+      resolve('Reading your Files...');
+
+    },2000);
+  })
+}
+
+
+const Task3= () => {
+
+  return new Promise((resolve,reject)=>{
+    setTimeout(() =>{
+
+      resolve('Password Files Detected...');
+
+    },3000);
+  })
+}
+
+
+const Task4= () => {
+
+  return new Promise((resolve,reject)=>{
+    setTimeout(() =>{
+
+      resolve('Sending all passwords and personal files to server...');
+
+    },4000);
+  })
+}
+
+
+const Task5= () => {
+
+  return new Promise((resolve,reject)=>{
+    setTimeout(() =>{
+
+      resolve('Cleaning up...');
+
+    },5000);
+  })
+}
+
+async function callTasks(){
+
+  document.write(await Task1());
+  document.write('</br>'+ await Task2());
+  document.write('</br>'+ await Task3());
+  document.write('</br>'+ await Task4());
+  document.write('</br>'+ await Task5());
+
+
+}
+
+callTasks();
+
+
+
+
+  
+
 
 
 

@@ -44,3 +44,11 @@ body{
     height: 150vh;
 } */
 
+body{
+
+  background-color: black;
+  color: #008000;
+  font-family: "Roboto", serif;
+  font-size: 15px;
+  font-weight: bold;
+}

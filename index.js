@@ -1190,79 +1190,79 @@
 
 // creating hacking simulator:
 
-const paraId = document.querySelector('.para');
+// const paraId = document.querySelector('.para');
 
 
-const Task1= () => {
+// const Task1= () => {
 
-  return new Promise((resolve,reject)=>{
-    setTimeout(() =>{
+//   return new Promise((resolve,reject)=>{
+//     setTimeout(() =>{
 
-      resolve('Initializing Hacking...');
+//       resolve('Initializing Hacking...');
 
-    },1000);
-  })
-}
+//     },1000);
+//   })
+// }
 
-const Task2= () => {
+// const Task2= () => {
 
-  return new Promise((resolve,reject)=>{
-    setTimeout(() =>{
+//   return new Promise((resolve,reject)=>{
+//     setTimeout(() =>{
 
-      resolve('Reading your Files...');
+//       resolve('Reading your Files...');
 
-    },2000);
-  })
-}
-
-
-const Task3= () => {
-
-  return new Promise((resolve,reject)=>{
-    setTimeout(() =>{
-
-      resolve('Password Files Detected...');
-
-    },3000);
-  })
-}
+//     },2000);
+//   })
+// }
 
 
-const Task4= () => {
+// const Task3= () => {
 
-  return new Promise((resolve,reject)=>{
-    setTimeout(() =>{
+//   return new Promise((resolve,reject)=>{
+//     setTimeout(() =>{
 
-      resolve('Sending all passwords and personal files to server...');
+//       resolve('Password Files Detected...');
 
-    },4000);
-  })
-}
-
-
-const Task5= () => {
-
-  return new Promise((resolve,reject)=>{
-    setTimeout(() =>{
-
-      resolve('Cleaning up...');
-
-    },5000);
-  })
-}
-
-async function callTasks(){
-
-  document.write(await Task1());
-  document.write('</br>'+ await Task2());
-  document.write('</br>'+ await Task3());
-  document.write('</br>'+ await Task4());
-  document.write('</br>'+ await Task5());
+//     },3000);
+//   })
+// }
 
 
-}
+// const Task4= () => {
 
-callTasks();
+//   return new Promise((resolve,reject)=>{
+//     setTimeout(() =>{
+
+//       resolve('Sending all passwords and personal files to server...');
+
+//     },4000);
+//   })
+// }
+
+
+// const Task5= () => {
+
+//   return new Promise((resolve,reject)=>{
+//     setTimeout(() =>{
+
+//       resolve('Cleaning up...');
+
+//     },5000);
+//   })
+// }
+
+// async function callTasks(){
+
+//   document.write(await Task1());
+//   document.write('</br>'+ await Task2());
+//   document.write('</br>'+ await Task3());
+//   document.write('</br>'+ await Task4());
+//   document.write('</br>'+ await Task5());
+
+
+// }
+
+// callTasks();
 
 
 
